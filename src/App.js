@@ -13,7 +13,7 @@ function App() {
             try {
                 const res = await (await fetch(URL)).json()
                 console.log(res)
-                setData(res);
+                setData(res.results.data);
             } catch (err) {
                 alert('Si è verificato un errore', err)
             }
