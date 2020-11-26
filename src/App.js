@@ -4,7 +4,7 @@ import { AppContext } from './context/AppContext';
 
 function App() {
     
-    const [data,setData] = useState('');
+    const [data,setData] = useState(null)
     const URL ='http://51.77.82.133:86/api/quotations/QUO_5fb3acb3a0f18';
 
 
@@ -12,7 +12,6 @@ function App() {
         void (async () => {
             try {
                 const res = await (await fetch(URL)).json()
-                console.log(res)
                 setData(res.results.data);
             } catch (err) {
                 alert('Si è verificato un errore', err)
@@ -20,6 +19,7 @@ function App() {
         })()
     }, []
     )
+   
 
     return (
         <div>

@@ -3,13 +3,14 @@ import { AppContext } from '../context/AppContext'
 
 
 function Header() {
+
     const contesto = useContext(AppContext);
-    console.log(contesto);
-    const imgSfondo= contesto.images[0].image;
-    
+     
+    const urlImg = (contesto) ? `url(${contesto.images[0].image})` : null;
 
     return (
-        <div className="container-fluid sfondo" style={{backgroundImage: {imgSfondo}}} >
+        (contesto) ?
+        <div className="container-fluid sfondo" style={{ backgroundImage: urlImg}} >
             <div className="row">
                 <div className="col">
                     <div>
@@ -23,6 +24,8 @@ function Header() {
                 </div>
             </div>
         </div>
+        :
+        <div />
     )
 }
 
