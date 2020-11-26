@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Header from './components/Header';
 import { AppContext } from './context/AppContext';
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
     return (
         <div>
             <AppContext.Provider value={data}>
-            <h1>Team 4</h1>
+                <Header />                
             </AppContext.Provider>
         </div>
     )
