@@ -21,12 +21,21 @@ function App() {
     }, []
     )
    
-
+/* In prima battuta 'data' avrà un valore di null,
+successivamente 'data', a fetch conclusa, sarà in contenitore dei dati dell'Api.
+Con l'operatore ternario (data) ? [renderizzo App] : [renderizzo spinner ] bypassiamo
+il problema dell'asincrono */
     return (
+        (data)
+        ?
         <div>
             <AppContext.Provider value={data}>
                 <Header />                
             </AppContext.Provider>
+        </div>
+        :
+        <div className="spinner-border" role="status">
+            <span className="sr-only">Loading...</span>
         </div>
     )
 }
