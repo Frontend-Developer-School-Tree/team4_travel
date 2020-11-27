@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
+<<<<<<< HEAD
 import Accordion from './components/Accordion';
+=======
+import Footer from './components/Footer';
+>>>>>>> a799f822ab20c6164be1d1e92ff50606fd586b5a
 import Header from './components/Header';
 import { AppContext } from './context/AppContext';
 
@@ -31,8 +35,13 @@ il problema dell'asincrono */
         ?
         <div>
             <AppContext.Provider value={data}>
+<<<<<<< HEAD
                 <Header />
                                 
+=======
+                <Header />   
+                <Footer />             
+>>>>>>> a799f822ab20c6164be1d1e92ff50606fd586b5a
             </AppContext.Provider>
         </div>
         :
