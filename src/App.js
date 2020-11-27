@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Accordion from './components/Accordion';
+import AccordionContainer from './components/AccordionContainer';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import { AppContext } from './context/AppContext';
@@ -32,7 +33,8 @@ il problema dell'asincrono */
         ?
         <div>
             <AppContext.Provider value={data}>
-                <Header />   
+                <Header />  
+                <AccordionContainer /> 
                 <Footer />             
             </AppContext.Provider>
         </div>
