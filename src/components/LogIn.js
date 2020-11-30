@@ -1,9 +1,16 @@
 import { Button, Form } from 'react-bootstrap';
-import React, { useState } from 'react'
-import {useHistory} from "react-router-dom";
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 export default function Login({}) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const [cookieUser, setCookieUser] = useCookies(['email']);
+  const [cookiePassword, setCookiePassword] = useCookies(['password']);
+  function handleCookie() {
+    setCookiePassword('password', password, { path: '/' });
+    setCookieUser('email', email, { path: '/' });
+  }
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -15,15 +22,15 @@ export default function Login({}) {
 
   const backHome = useHistory();
 
-
-  function handleCheckForm(){
-
+  function handleCheckForm() {
     console.log(email, password);
 
-      return (
-      (email === 'team4' && password === 'team4' ) ? () => backHome.push('/Home') : () => {setEmail(''); setPassword('');}
-      )
-
+    return email === 'team4' && password === 'team4'
+      ? () => backHome.push('/Home')
+      : () => {
+          setEmail('');
+          setPassword('');
+        };
   }
 
   return (
@@ -46,7 +53,13 @@ export default function Login({}) {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()} onClick={handleCheckForm()}>
+        <Button
+          block
+          size="lg"
+          type="submit"
+          disabled={!validateForm()}
+          onClick={handleCheckForm()}
+        >
           Login
         </Button>
       </Form>
