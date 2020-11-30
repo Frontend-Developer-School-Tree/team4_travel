@@ -1,16 +1,12 @@
 import { Button, Form } from 'react-bootstrap';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 export default function Login({}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const [cookieUser, setCookieUser] = useCookies(['email']);
-  const [cookiePassword, setCookiePassword] = useCookies(['password']);
-  function handleCookie() {
-    setCookiePassword('password', password, { path: '/' });
-    setCookieUser('email', email, { path: '/' });
-  }
+  const [cookies, setCookie] = useCookies(['logged']);
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -26,14 +22,14 @@ export default function Login({}) {
     console.log(email, password);
 
     return email === 'team4' && password === 'team4'
-      ? () => backHome.push('/Home')
+      ? () => { backHome.push('/Home'); setCookie('logged', true, { path: '/' });}
       : () => {
           setEmail('');
           setPassword('');
         };
   }
 
-  return (
+  return ( 
     <div className="Login">
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg">

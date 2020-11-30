@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import Accordion from './components/Accordion';
-import AccordionContainer from './components/AccordionContainer';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Referenze from './components/Referenze';
-import { AppContext } from './context/AppContext';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link,
-    Redirect,
-    useHistory 
 } from "react-router-dom";
 import Login from './components/Login';
+import HomePage from './components/HomePage';
 
 
 function App() {
@@ -51,12 +43,7 @@ function App() {
                             <Login />
                         </Route>
                         <Route exact path="/Home">
-                            <AppContext.Provider value={data}>
-                                <Header />
-                                <Referenze />
-                                <AccordionContainer />
-                                <Footer />
-                            </AppContext.Provider>
+                            <HomePage data={data} />
                         </Route>
                     </Switch>
                 </Router>
