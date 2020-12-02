@@ -27,7 +27,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div class="footer-copyright text-center">
+                <div className="footer-copyright text-center">
                     <p>© 2020 Copyleft: <strong>Team 4 - Francesca, Johanna, Fabio, Giuseppe</strong></p>
                 </div>
             </footer>
