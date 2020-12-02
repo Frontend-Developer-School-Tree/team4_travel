@@ -44,3 +44,11 @@ body{
 .container-ref{
     padding: 5px;
 }
+.card-header{
+    border-bottom: none !important;
+    background-color: rgba(0,0,0,0) !important;
+}
+.fa-angle-up, .fa-angle-down {
+    cursor: pointer;
+    color:#9BA7AF;
+}

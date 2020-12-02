@@ -11,7 +11,6 @@ function Referenze() {
                 <div className="col-lg-12" style={{minWidth:'1300px'}}>
                     <div className="row shadow bg-light arrotonda-card">
                         <div className="col-3 p-4">
-                            {/* <img src={contesto.operator.image} alt={contesto.operator.name} style={{ width: '150px', height: '150px' }} /> */}
                             <div style={{ width: '200px', height: '200px',backgroundImage: `url(${contesto.operator.image})`,backgroundSize:'cover', }}>
 
                             </div>
