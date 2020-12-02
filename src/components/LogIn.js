@@ -1,12 +1,10 @@
 import { Button, Form } from 'react-bootstrap';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useCookies } from 'react-cookie';
 export default function Login({}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const [cookies, setCookie] = useCookies(['logged']);
 
   function validateForm() {
     return email.length > 0 && password.length > 0;

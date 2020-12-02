@@ -27,7 +27,7 @@ function App() {
     }, []
     )
 
-        
+
 
     /* In prima battuta 'data' avrà un valore di null,
     successivamente 'data', a fetch conclusa, sarà in contenitore dei dati dell'Api.
