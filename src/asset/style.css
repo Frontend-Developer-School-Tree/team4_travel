@@ -4,7 +4,7 @@
     box-sizing: border-box !important;
 }
 body{
-    font-family: Nunito,sans-serif;
+    font-family: Roboto,sans-serif;
     background-color: #E5E5E5;
     align-items: center;
 }
@@ -36,4 +36,11 @@ body{
 .text-login{
     color:white !important;
     font-weight: 600 !important;
+}
+.arrotonda-card{
+    border-radius: 15px;
+    border:none;
+}
+.container-ref{
+    padding: 5px;
 }
