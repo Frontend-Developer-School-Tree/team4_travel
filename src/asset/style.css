@@ -8,6 +8,15 @@ body{
     background-color: #E5E5E5;
     align-items: center;
 }
+h1{
+
+}
+h2{
+
+}
+p{
+
+}
 .sfondo{
     width: 100%;
     height: 100vh;
@@ -18,4 +27,21 @@ body{
 .overlay_image{
     background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.5));
 
+}
+.Login{
+    background: linear-gradient(#24C6DC, 
+    #514a9d);
+    width: 100%;
+    height: 100vh;
+}
+.Btn-login{
+    border-radius: 50px;
+    background-color: rgb(255, 254, 242) !important;
+    color: #514a9d !important;
+    font-weight: 600;
+    padding: 5px !important;
+}
+.text-login{
+    color:white !important;
+    font-weight: 600 !important;
 }
