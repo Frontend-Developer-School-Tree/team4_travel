@@ -20,7 +20,7 @@ export default function Login({}) {
     console.log(email, password);
 
     return email === 'team4' && password === 'team4'
-      ? () => { backHome.push('/Home'); setCookie('logged', true, { path: '/' });}
+      ? () => { backHome.push('/Home'); }
       : () => {
           setEmail('');
           setPassword('');
