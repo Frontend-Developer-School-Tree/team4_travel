@@ -11,8 +11,8 @@ function Accordion({ title, content }) {
             <div className="row">
                 <div className="col-lg-12" style={{minWidth:'1300px'}}>
                     <div className="arrotonda-card card bg-light mb-3 shadow">
-                        <div className="card-header p-2 font-weight-bold text-uppercase">
-                            <span className="align-middle" style={{ color: "#0063C9" }}>{title}</span>
+                        <div className="card-header p-3 font-weight-bold text-uppercase">
+                            <span className="align-middle p-3" style={{ color: "#0063C9", fontSize: '32px', lineHeight:'37px'}}>{title}</span>
                             <i className={iconClass} onClick={() => setIsOpen(!isOpen)} /></div>
                         <div className="card-body" style={{maxWidth:'1300px'}}>
                             {(isOpen)
