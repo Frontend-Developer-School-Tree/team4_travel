@@ -52,3 +52,7 @@ body{
     cursor: pointer;
     color:#9BA7AF;
 }
+.container_mappa{
+    width: 1200px;
+    height: 400px;
+}

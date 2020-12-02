@@ -12,7 +12,7 @@ function LuoghiAccordion({ city, date, content }) {
                     <div className="arrotonda-card card bg-light mb-3 shadow">
                         <div className="card-header p-2 font-weight-bold text-uppercase">
                             <span className="align-middle" style={{ color: "#0063C9" }}>{city}</span>
-                            <span className="align-middle" style={{ color: "#0d0d0d" }}>{city}</span>
+                            <span className="align-middle" style={{ color: "#0d0d0d" }}>{date}</span>
                             <i className={iconClass} onClick={() => setIsOpen(!isOpen)} /></div>
                         <div className="card-body" style={{ maxWidth: '1300px' }}>
                             {(isOpen)
