@@ -20,7 +20,7 @@ export default function Login({}) {
     console.log(email, password);
 
     return email === 'team4' && password === 'team4'
-      ? () => { backHome.push('/Home'); }
+      ? () => { backHome.push('/Home')}
       : () => {
           setEmail('');
           setPassword('');
@@ -28,20 +28,22 @@ export default function Login({}) {
   }
 
   return ( 
-    <div className="Login">
+    <div className="Login d-flex justify-content-center">
       <Form onSubmit={handleSubmit}>
-        <Form.Group size="lg">
-          <Form.Label>Email</Form.Label>
+        <Form.Group className="col-lg-12 mb-4 mt-4">
+          <Form.Label className="text-login">Username</Form.Label>
           <Form.Control
+            className="shadow"
             autoFocus
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>
-        <Form.Group size="lg">
-          <Form.Label>Password</Form.Label>
+        <Form.Group className=" col-lg-12 mb-4 mt-4">
+          <Form.Label className="text-login">Password</Form.Label>
           <Form.Control
+          className="shadow"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -49,7 +51,7 @@ export default function Login({}) {
         </Form.Group>
         <Button
           block
-          size="lg"
+          className="Btn-login shadow col-lg-12 mb-4 mt-4"
           type="submit"
           disabled={!validateForm()}
           onClick={handleCheckForm()}

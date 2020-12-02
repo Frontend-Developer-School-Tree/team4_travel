@@ -40,7 +40,7 @@ function App() {
                 <Router>
                     <Switch>
                         <Route exact path="/">
-                            <Login />
+                            <Login className="Login"/>
                         </Route>
                         <Route exact path="/Home">
                             <HomePage data={data} />

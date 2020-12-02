@@ -6,21 +6,24 @@ function Referenze() {
     const contesto = useContext(AppContext);
 
     return (
-        <div className="d-flex justify-content-center mb-4 mt-4 ">
+        <div className="container-fluid mt-5 d-flex justify-content-center">
             <div className="row">
-                <div className="col-lg-12 ">
-                    <div className="row shadow bg-light">
-                        <div className="col-3 p-2">
-                            <img src={contesto.operator.image} alt={contesto.operator.name} style={{ width: '150px', height: '150px' }} />
+                <div className="col-lg-12" style={{minWidth:'1300px'}}>
+                    <div className="row shadow bg-light arrotonda-card">
+                        <div className="col-3 p-4">
+                            {/* <img src={contesto.operator.image} alt={contesto.operator.name} style={{ width: '150px', height: '150px' }} /> */}
+                            <div style={{ width: '200px', height: '200px',backgroundImage: `url(${contesto.operator.image})`,backgroundSize:'cover', }}>
+
+                            </div>
                         </div>
-                        <div className="col-5 p-4 border-right">
-                            <div>{contesto.operator.name}</div>
-                            <div>Il tuo agente di viaggio</div>
-                            <div><i className="fa fa-phone" aria-hidden="true" /> {contesto.operator.contact.phone}</div>
-                            <div><i className="fa fa-envelope" aria-hidden="true" /> {contesto.operator.contact.email}</div>
-                            <div><i className="fas fa-home" /> {contesto.operator.contact.address}</div>
+                        <div className="col-3 p-1 border-right pt-4">
+                            <div style={{fontSize:'23px',lineHeight:'40px'}}>{contesto.operator.name}</div>
+                            <div style={{fontSize:'18px',lineHeight:'30px'}}>Il tuo agente di viaggio</div>
+                            <div style={{fontSize:'18px',lineHeight:'30px'}}><i className="fa fa-phone" aria-hidden="true" /> <a href="#"> {contesto.operator.contact.phone}</a></div>
+                            <div style={{fontSize:'18px',lineHeight:'30px'}}><i className="fa fa-envelope" aria-hidden="true" /> <a href="#"> {contesto.operator.contact.email}</a></div>
+                            <div style={{fontSize:'18px',lineHeight:'30px'}}><i className="fas fa-home" /> {contesto.operator.contact.address}</div>
                         </div>
-                        <div className="col-4 p-4">
+                        <div className="col-6 p-4">
                             <div>
                                 <img src={contesto.agency.image} alt="logo" style={{ width: '132px', height: '45px' }} />
                             </div>

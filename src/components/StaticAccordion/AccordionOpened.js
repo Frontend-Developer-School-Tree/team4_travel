@@ -2,7 +2,7 @@ import React from 'react'
 
 function AccordionOpened({content}) {
     return (
-        <div>
+        <div className="card-body">
             <p className="card-text p-2">{content}</p>
         </div>
     )
