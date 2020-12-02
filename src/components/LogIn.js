@@ -17,7 +17,6 @@ export default function Login({}) {
   const backHome = useHistory();
 
   function handleCheckForm() {
-    console.log(email, password);
 
     return email === 'team4' && password === 'team4'
       ? () => { backHome.push('/Home')}
