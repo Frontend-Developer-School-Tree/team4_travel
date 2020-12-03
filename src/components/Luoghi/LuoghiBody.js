@@ -1,4 +1,5 @@
 import React from 'react'
+import Timeline from '../Timeline'
 import LuoghiBodyAccomodation from './LuoghiBodyAccomodation'
 import LuoghiCar from './LuoghiCar'
 
@@ -8,8 +9,8 @@ function LuoghiBody({rows, car}) {
             {rows.map((row, index)=>{
                 return(
                     <div>
-                        <div style={{width:'80px', height:'1000px', backgroundColor:'orange', float:'left'}}></div>
-
+                        <Timeline />
+                        
                         <div className="container_data" style={{float:'left', width:'1100px'}}key={row.id}>
                             <div className="container_citta">
                                 <p>{row.places[0].name}</p>
