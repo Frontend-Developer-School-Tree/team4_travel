@@ -11,7 +11,6 @@ function LuoghiContainer() {
     
     const arrDate = arrayDate(rows);
     const arrBody = arrayBody(rows);
-  
     return (
         <div>
             {arrCity.map((city, index)=>{
@@ -21,6 +20,7 @@ function LuoghiContainer() {
                         date={stampaData(arrDate[index][0], arrDate[index][1])} 
                         key={index*151} 
                         rows={arrBody[index]}
+                        car={index===0}
                     />
                 )
             })}
