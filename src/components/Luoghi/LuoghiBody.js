@@ -6,7 +6,10 @@ function LuoghiBody({rows}) {
             {rows.map(row=>{
                 return(
                     <div key={row.id}>
-                        <h4>{row.days[0].name}</h4>
+                        <p>{row.places[0].name}</p>
+                        <p>{row.days[0].name}</p>
+                        <p></p>
+                        <hr />
                     </div>
                 )
             })}
