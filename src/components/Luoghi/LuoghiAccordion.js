@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import LuoghiBody from './LuoghiBody';
 
-function LuoghiAccordion({ city, date, content }) {
+function LuoghiAccordion({ city, date, rows }) {
 
     const [isOpen, setIsOpen] = useState(false);
     const iconClass = `fas fa-angle-${(isOpen ? 'up' : 'down')} float-right p-2`;
@@ -17,7 +18,7 @@ function LuoghiAccordion({ city, date, content }) {
                         <div className="card-body" style={{ maxWidth: '1300px' }}>
                             {(isOpen)
                                 ?
-                                <div />
+                                <LuoghiBody rows={rows}/>
                                 :
                                 <div />}
                         </div>
