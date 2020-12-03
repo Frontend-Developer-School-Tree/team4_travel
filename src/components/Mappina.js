@@ -1,14 +1,14 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../context/AppContext'
 import { MapContainer, Marker, Popup, TileLayer,} from 'react-leaflet'
+import { arrayCity, arrayDate, arrayUnique } from '../funzioni';
 
 function Mappina() {
   
     const contesto = useContext(AppContext);
-    /* const Pos_siracusa= [37.0633,15.2859]
-    const Pos_vendicari= [36.8016,15.0914]
-    const Pos_catania= [37.5016,15.0889] */
-
+    const rows = contesto.rows;
+    const arrayLuoghi =  arrayUnique(arrayCity(rows));
+    const arrayGiorni = arrayDate(rows);
     const Pos_siracusa= contesto.rows[0].places[0].position.coords;
     const Pos_vendicari= contesto.rows[2].places[0].position.coords;
     const Pos_catania= contesto.rows[6].places[0].position.coords;
@@ -33,8 +33,13 @@ function Mappina() {
                       </MapContainer>
                       <div className="info_mappa">
                         <div className="titolo_mappa">{contesto.title}</div>
-                        <div className="titolo_percorso">SIRACUSA > vendicari > Catania</div>
-                        <div className="date_viaggio"><i class="fas fa-long-arrow-alt-right"></i>Dal 20/11/2020 al 26/11/2020</div>
+                        {/* <div className="titolo_percorso">SIRACUSA > vendicari > Catania</div> */}
+                        <div className="titolo_percorso">
+                          {arrayLuoghi.map(citta=>{
+                            return (<span key={citta}>{citta} > </span>)
+                          })}
+                        </div>
+                        <div className="date_viaggio"><i class="fas fa-long-arrow-alt-right"></i>{`Dal ${arrayGiorni[0][0]} al ${arrayGiorni[arrayGiorni.length-1][1]}`}</div>
                         <div className="date_viaggio"><i class="fas fa-long-arrow-alt-right"></i>2 adolescenti <i class="fas fa-long-arrow-alt-right"></i>2 adulti </div>
                         <div className="date_viaggio"><i class="fas fa-long-arrow-alt-right"></i>7 Giorni - 6 Notti</div>
                       </div>
