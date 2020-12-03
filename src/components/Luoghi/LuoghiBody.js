@@ -1,4 +1,5 @@
 import React from 'react'
+import LuoghiBodyAccomodation from './LuoghiBodyAccomodation'
 import LuoghiCar from './LuoghiCar'
 
 function LuoghiBody({rows, car}) {
@@ -21,17 +22,22 @@ function LuoghiBody({rows, car}) {
                                     </p>
                                 </div>
                                 <div className="container_imageHotel p-2">
-                                    <div style={{cursor:'pointer', width: '1100px', height: '300px',backgroundImage: `url(${row.days[0].images[0].image})`,backgroundSize:'cover' }}>
-                                    </div>
+                                    {row.days[0].images.map(img=>{
+                                        return(
+                                            <div className="col" key={img.id} style={{cursor:'pointer', width: '1100px', height: '300px',backgroundImage: `url(${img.image})`,backgroundSize:'cover' }}>
+                                            </div>
+                                        )
+                                    })}
                                 </div>
                                 <div className="container_descrizioneHotel p-2">
                                     <p style={{fontSize:'14px', lineHeight:'16px'}}>{row.days[0].description}</p>
                                 </div>
                             </div>
-
-                            
-                            
+                        
                             {(index===0 && car) && (<LuoghiCar />)}
+                            <p>Icona verde con spunta</p>
+                            <LuoghiBodyAccomodation accomodations={row.accomodations}/>
+                            <p>{row.included}</p>
                             <hr />
                         </div>
                     </div>
@@ -41,4 +47,4 @@ function LuoghiBody({rows, car}) {
     )
 }
 
-export default LuoghiBody
+export default LuoghiBody;
