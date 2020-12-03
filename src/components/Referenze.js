@@ -10,11 +10,11 @@ function Referenze() {
             <div className="row">
                 <div className="col-lg-12" style={{minWidth:'1300px'}}>
                     <div className="row shadow bg-light arrotonda-card">
-                        <div className="col-3 p-4">
+                        <div className="col-2 p-4">
                             <div style={{ width: '200px', height: '200px',backgroundImage: `url(${contesto.operator.image})`,backgroundSize:'cover', }}>
                             </div>
                         </div>
-                        <div className="col-3 p-1 border-right pt-4">
+                        <div className="col-4 pl-4 p-1 border-right pt-4">
                             <div style={{fontSize:'23px',lineHeight:'40px'}}>{contesto.operator.name}</div>
                             <div style={{fontSize:'18px',lineHeight:'30px'}}>Il tuo agente di viaggio</div>
                             <div style={{fontSize:'18px',lineHeight:'30px'}}><i className="fa fa-phone" aria-hidden="true" /> <a href="#"> {contesto.operator.contact.phone}</a></div>
