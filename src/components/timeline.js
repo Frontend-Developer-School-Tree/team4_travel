@@ -1,6 +1,6 @@
 import React from 'react'
 
-function timeline() {
+function Timeline() {
     return (
         <div className='tlContainer'>
             <div className='Dot Big'>
@@ -13,4 +13,4 @@ function timeline() {
     )
 }
 
-export default timeline
+export default Timeline

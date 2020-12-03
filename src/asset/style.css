@@ -90,4 +90,9 @@ body{
     border-radius: 50%;
     height: 25px;
     width: 25px;
+
+}
+
+.container_data{
+    padding-left: 50px !important;
 }
