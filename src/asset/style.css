@@ -90,7 +90,6 @@ body{
     border-radius: 50%;
     height: 25px;
     width: 25px;
-    padding-bottom: 4px;
 
 }
 
@@ -110,19 +109,37 @@ body{
     background-color: rgb(137, 170, 185);
 }
 
+.dotBg{
+    background-image: url('http://51.77.82.133:86/images/Ellipse.png');
+    background-repeat: repeat-y;
+    height: 100%;
+    background-size: 8px;
+    width: 100%;
+    background-position: 50%;
+}
+
 .container_data{
     padding-left: 50px !important;
 }
 
+/* .fa .fa-map-marker, .fa .fa-car{
 .car_icona i{
     color: rgb(202, 143, 1);
     line-height: 100px;
     text-align: center;
     font-size: 40px;
     display: block;
+<<<<<<< HEAD
+
+} */
+=======
 }
+<<<<<<< HEAD
 .btn_transports{
     border: 1px solid;
     padding: 5px 10px !important;
     color: #0063C9;
 }
+=======
+>>>>>>> 9523be7950065ed3ea160099965cddd90c8e3349
+>>>>>>> ddc42f729b27f60f1b7fed50b736cfa3c0fff7ff
