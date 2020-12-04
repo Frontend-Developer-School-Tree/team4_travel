@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Timeline from '../Timeline'
 import LuoghiBodyAccomodation from './LuoghiBodyAccomodation'
 import LuoghiCar from './LuoghiCar'
+import Modale from './Modale'
 
 function LuoghiBody({rows, car}) {
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
         <div className="card-body p-4" style={{borderTop:'1px solid lightgray'}}>
             {rows.map((row, index)=>{
@@ -25,7 +32,9 @@ function LuoghiBody({rows, car}) {
                                 <div className="container_imageHotel p-2">
                                     {row.days[0].images.map(img=>{
                                         return(
-                                            <div className="col" key={img.id} style={{cursor:'pointer', width: '1100px', height: '300px',backgroundImage: `url(${img.image})`,backgroundSize:'cover' }}>
+                                            <div>
+                                                <div className="col" key={img.id} onClick={handleShow} style={{cursor:'pointer', width: '1100px', height: '300px',backgroundImage: `url(${img.image})`,backgroundSize:'cover' }} />
+                                                <Modale image={img.image} show={show} handleClose={handleClose} /> 
                                             </div>
                                         )
                                     })}
@@ -41,6 +50,7 @@ function LuoghiBody({rows, car}) {
                             <p>{row.included}</p>
                             <hr />
                         </div>
+                           
                     </div>
                 )
             })}
