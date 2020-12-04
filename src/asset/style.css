@@ -122,10 +122,19 @@ body{
     padding-left: 50px !important;
 }
 
+<<<<<<< HEAD
 /* .fa .fa-map-marker, .fa .fa-car{
+=======
+.car_icona i{
+    color: rgb(202, 143, 1);
+>>>>>>> 9523be7950065ed3ea160099965cddd90c8e3349
     line-height: 100px;
     text-align: center;
     font-size: 40px;
     display: block;
+<<<<<<< HEAD
 
 } */
+=======
+}
+>>>>>>> 9523be7950065ed3ea160099965cddd90c8e3349
