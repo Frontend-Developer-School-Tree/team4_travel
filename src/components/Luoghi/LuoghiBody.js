@@ -15,9 +15,10 @@ function LuoghiBody({rows, car}) {
         <div className="card-body p-4" style={{borderTop:'1px solid lightgray'}}>
             {rows.map((row, index)=>{
                 return(
-                    <div>
-                        <div className="container_data" style={{float:'left', width:'1100px'}}key={row.id}>
-                            <Timeline />
+                    <div className='row'>
+                        <Timeline className='col-1'/>
+                        <div className="container_data col" style={{float:'left'}}key={row.id}>
+                            
                             <div className="container_citta">
                                 <p>{row.places[0].name}</p>
                             </div>
