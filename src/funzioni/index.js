@@ -33,7 +33,7 @@ export function stampaData(start, end){
     let dateEnd = new Date(end);
     let ds, de, ms, me, ys, ye, nms, nme;
     ds=dateStart.getDate(); de=dateEnd.getDate();
-    ms = dateStart.getMonth(); me = dateEnd.getMonth();
+    ms = dateStart.getMonth() +1; me = dateEnd.getMonth() +1;
     ys = dateStart.getFullYear(); ye = dateEnd.getFullYear();
     nms=selezionaMese(ms); nme=selezionaMese(me);
     console.log(dateStart, dateEnd,ms,me, nms, nme)
