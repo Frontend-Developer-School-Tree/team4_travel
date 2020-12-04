@@ -9,8 +9,38 @@ export function arrayCity(rows){
     return arrCity;
 }
 
+function selezionaMese(n){
+    let a;
+    switch(n){
+        case 1: a = 'GENNAIO'; break;
+        case 2: a = 'FEBBRAIO'; break;
+        case 3: a = 'MARZO'; break;
+        case 4: a = 'APRILE'; break;
+        case 5: a = 'MAGGIO'; break;
+        case 6: a = 'GIUGNO'; break;
+        case 7: a = 'LUGLIO'; break;
+        case 8: a = 'AGOSTO'; break;
+        case 9: a = 'SETTEMBRE'; break;
+        case 10: a = 'OTTOBRE'; break;
+        case 11: a = 'NOVEMBRE'; break;
+        default: a = 'DICEMBRE'; break;
+    }
+    return a;
+}
+
 export function stampaData(start, end){
-    return (start===end) ? `${start}` : `${start} ${end}`
+    let dateStart = new Date (start);
+    let dateEnd = new Date(end);
+    let ds, de, ms, me, ys, ye, nms, nme;
+    ds=dateStart.getDate(); de=dateEnd.getDate();
+    ms = dateStart.getMonth() +1; me = dateEnd.getMonth() +1;
+    ys = dateStart.getFullYear(); ye = dateEnd.getFullYear();
+    nms=selezionaMese(ms); nme=selezionaMese(me);
+    console.log(dateStart, dateEnd,ms,me, nms, nme)
+    if(start===end) return `${ds} ${nms} ${ys}`;
+    else if (ms !== me && ys===ye) return `${ds} ${nms} - ${de} ${nme} ${ys}`;
+    else if (ys !== ye) return `${ds} ${nms} ${ys} - ${de} ${nms} ${ye}`;
+    else if (ds!==de && ms===me && ys===ye) return `${ds} - ${de} ${nms} ${ye}`;
 }
 
 export function arrayDate (rows){
