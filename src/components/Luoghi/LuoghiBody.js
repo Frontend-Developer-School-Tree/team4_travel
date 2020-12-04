@@ -16,9 +16,8 @@ function LuoghiBody({rows, car}) {
             {rows.map((row, index)=>{
                 return(
                     <div>
-                        <Timeline />
-                        
                         <div className="container_data" style={{float:'left', width:'1100px'}}key={row.id}>
+                            <Timeline />
                             <div className="container_citta">
                                 <p>{row.places[0].name}</p>
                             </div>
