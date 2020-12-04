@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../context/AppContext'
-import { MapContainer, Marker, Popup, TileLayer,} from 'react-leaflet'
+import { MapContainer, Marker, TileLayer,} from 'react-leaflet'
 import { arrayCity, arrayDate, arrayUnique } from '../funzioni';
 
 function Mappina() {
@@ -33,10 +33,9 @@ function Mappina() {
                       </MapContainer>
                       <div className="info_mappa">
                         <div className="titolo_mappa">{contesto.title}</div>
-                        {/* <div className="titolo_percorso">SIRACUSA > vendicari > Catania</div> */}
                         <div className="titolo_percorso">
-                          {arrayLuoghi.map(citta=>{
-                            return (<span key={citta}>{citta} > </span>)
+                          {arrayLuoghi.map((citta, index)=>{
+                            return (<span key={citta}>{citta} {(index!==arrayLuoghi.length-1)&&'>'} </span>)
                           })}
                         </div>
                         <div className="date_viaggio"><i class="fas fa-long-arrow-alt-right"></i>{`Dal ${arrayGiorni[0][0]} al ${arrayGiorni[arrayGiorni.length-1][1]}`}</div>

@@ -1,5 +1,3 @@
-import React from 'react'
-
 export function arrayCity(rows){
     const arrCity = []; 
     arrCity.push(rows[0].places[0].name);
