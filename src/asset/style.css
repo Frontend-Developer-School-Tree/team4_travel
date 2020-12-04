@@ -121,3 +121,8 @@ body{
     font-size: 40px;
     display: block;
 }
+.btn_transports{
+    border: 1px solid;
+    padding: 5px 10px !important;
+    color: #0063C9;
+}
