@@ -113,3 +113,11 @@ body{
 .container_data{
     padding-left: 50px !important;
 }
+
+.car_icona i{
+    color: rgb(202, 143, 1);
+    line-height: 100px;
+    text-align: center;
+    font-size: 40px;
+    display: block;
+}

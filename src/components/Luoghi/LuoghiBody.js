@@ -44,9 +44,14 @@ function LuoghiBody({rows, car}) {
                                 </div>
                             </div>
                         
-                            {(index===0 && car) && (<LuoghiCar />)}
-                            <p>Icona verde con spunta</p>
+                            <div className="p-3" style={{ width:'1100px'}}>
+                                {(index===0 && car) && (<LuoghiCar />)}
+                            </div>
+                            
+                            
                             <LuoghiBodyAccomodation accomodations={row.accomodations}/>
+
+                            <p>Icona verde con spunta</p>
                             <p>{row.included}</p>
                             <hr />
                         </div>
