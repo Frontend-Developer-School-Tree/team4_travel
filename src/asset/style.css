@@ -127,3 +127,7 @@ body{
     padding: 5px 10px !important;
     color: #0063C9;
 }
+
+.fa .fa-map-marker{
+    display: block;
+}
