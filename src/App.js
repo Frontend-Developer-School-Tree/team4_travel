@@ -40,7 +40,7 @@ function App() {
                 <Router>
                     <Switch>
                         <Route exact path="/">
-                            <Login className="Login"/>
+                            <Login className="Login" />
                         </Route>
                         <Route exact path="/Home">
                             <HomePage data={data} />
@@ -49,8 +49,10 @@ function App() {
                 </Router>
             </div>
             :
-            <div className="spinner-border" role="status">
-                <span className="sr-only">Loading...</span>
+            <div className="d-flex justify-content-center align-items-center" style={{ width: '100vw', height: '100vh' }}>
+                <div className="spinner-border" role="status" style={{height: '100px', width: '100px'}}>
+                    <span className="sr-only">Loading...</span>
+                </div>
             </div>
     )
 }
