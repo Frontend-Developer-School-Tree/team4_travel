@@ -18,8 +18,8 @@ function LuoghiBody({ rows, car }) {
                 day++;
                 return(
                     <div className='row'>
-                        <Timeline day={day} car={car} index={index} className='col-1'/>
-                        <div className="container_data col" style={{float:'left'}}key={row.id}>
+                        <Timeline day={day} car={car} index={index} className='col-1 sparisci'/>
+                        <div className="col-xl-8 offset-xl-2"key={row.id}>
                             
                             <div className="container_citta">
                                 <p>{row.places[0].name}</p>
