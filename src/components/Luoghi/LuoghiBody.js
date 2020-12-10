@@ -31,15 +31,15 @@ function LuoghiBody({ rows, car }) {
                                         <span style={{ color: '#9BA7AF', fontSize: '26px', lineHeight: '30px', fontWeight: '400' }}>   {row.dayDate}</span>
                                     </p>
                                 </div>
-                                <div className="container_imageHotel p-2">
+                                <div className="container_imageHotel p-2 d-flex">
                                     {row.days[0].images.map(img => {
                                         return (
-                                            <div>
-                                                <div className="col" key={img.id} onClick={handleShow} style={{ cursor: 'pointer', width: '1100px', height: '300px', backgroundImage: `url(${img.image})`, backgroundSize: 'cover' }} />
-                                                <Modale image={img.image} show={show} handleClose={handleClose} />
-                                            </div>
+                                            
+                                                <div className="col m-2" key={img.id} onClick={handleShow} style={{ cursor: 'pointer', width: '1100px', height: '300px', backgroundImage: `url(${img.image})`, backgroundSize: 'cover' }} />
+                                               
+                                            
                                         )
-                                    })}
+                                    })}{/*  <Modale image={img.image} show={show} handleClose={handleClose} /> */}
                                 </div>
                                 <div className="container_descrizioneHotel p-2">
                                     <p style={{ fontSize: '14px', lineHeight: '16px' }}>{row.days[0].description}</p>
@@ -61,6 +61,7 @@ function LuoghiBody({ rows, car }) {
                                     <div className="m-3" style={{fontSize:'14px', lineHeight:'20px',float:'left'}}>{row.included}</div>
                                 </div>
 
+                                {(row.notIncluded)&& 
                                 <div className="col-6 p-4">
                                     <div className="d-flex align-items-center justify-content-center" style={{ float:'left',backgroundColor: 'rgb(253, 209, 218)', width: '50px', height: '50px', borderRadius: '50px', cursor: 'pointer' }}>
                                         <i class="fas fa-times" style={{ fontSize: '26px', color: 'rgb(189, 98, 117)' }}></i>
@@ -68,6 +69,8 @@ function LuoghiBody({ rows, car }) {
                                     </div>
                                     <div className="m-3"  style={{fontSize:'14px', lineHeight:'20px',float:'left'}}>{row.notIncluded}</div>
                                 </div>
+                                }
+
                             </div>
 
 

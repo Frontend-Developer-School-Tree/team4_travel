@@ -131,3 +131,12 @@ body{
 .fa .fa-map-marker{
     display: block;
 }
+.btn-tag{
+    display: inline-block;
+}
+.colonna_images{
+    flex-direction: column;
+}
+.overlay_gallery:hover{
+    opacity: 0.5;
+}
