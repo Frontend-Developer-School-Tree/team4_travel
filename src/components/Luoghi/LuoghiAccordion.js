@@ -9,7 +9,7 @@ function LuoghiAccordion({ city, date, rows, car }) {
     return (
         <div className='d-flex justify-content-center mt-4'>
             <div className="row">
-                <div className="col-lg-12" style={{ minWidth: '1300px' }}>
+                <div className="col-sm col-md col-lg col-xl" style={{ minWidth: '1300px' }}>
                     <div className="arrotonda-card card bg-light mb-3 shadow">
                         <div className="card-header p-3 text-uppercase">
                             <span className="align-middle p-3 font-weight-bold" style={{ color: "#5B5959", fontSize: '32px', lineHeight:'37px' }}>{city}</span>
