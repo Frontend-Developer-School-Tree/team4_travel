@@ -10,7 +10,7 @@ function Referenze() {
             <div className="row">
                 <div className="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 col-xs-12">
                     <div className="shadow bg-light arrotonda-card d-flex">
-                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 p-4 d-flex">
+                        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 p-4 referenze">
                             <div style={{ width: '168px', height: '168px', backgroundImage: `url(${contesto.operator.image})`, backgroundSize: 'cover', }}>
                             </div>
                             <div className="ml-4">

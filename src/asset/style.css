@@ -135,9 +135,13 @@ body{
     opacity: 0.5;
 }
 
-@media screen and (max-width: 768px) {
+.referenze{
+    display: flex;
+}
 
-    .sparisci{
-        display: none;
+@media screen and (max-width: 615px) {
+
+    .referenze{
+        display:block;
     }
   }
