@@ -1,18 +1,21 @@
 import React from 'react'
 
-function Timeline() {
+function Timeline({day, car, index}) {
+    console.log(car);
     return (
                 <div className='d-flex flex-column align-items-center'>
-                    <div className='Dot Big mb-1 mt-1'>
+            <div className='Dot Big mb-1 mt-1 d-flex align-items-center justify-content-center'>
+                <p>DAY {day}</p>
                     </div>
                     <div className='Dot Medium Medium2 d-flex align-items-center justify-content-center mb-1'>
                         <i class="fa fa-map-marker"></i>
-                    </div>
-                    <div className='Dot Medium d-flex align-items-center justify-content-center mb-1'>
-                        <i class="fa fa-car"></i>
-                    </div>
-                    <div className='dotBg'>
-                    </div>
+                    </div>{(car && !index) ?
+                         <div className='Dot Medium d-flex align-items-center justify-content-center mb-1'>
+                                <i class="fa fa-car"></i>
+                         </div>
+                        : <div />
+                    }
+                    <div className='dotBg' />
                 </div>
     )
 }
