@@ -16,7 +16,7 @@ function LuoghiBody({ rows, car }) {
             {
             rows.map((row, index)=>{
                 day++;
-                let arrImg = [];
+                const arrImg = [];
                 return(
                     <div className='row'>
                         <Timeline day={day} car={car} index={index} className='col-1 sparisci'/>
@@ -38,7 +38,9 @@ function LuoghiBody({ rows, car }) {
                                         return (
                                                 <div className="col m-2" key={img.id} onClick={handleShow} style={{ cursor: 'pointer', width: '1100px', height: '300px', backgroundImage: `url(${img.image})`, backgroundSize: 'cover' }} />
                                         )
-                                    })}<Modale image={arrImg} show={show} handleClose={handleClose} /></div>
+                                    })}
+                                    <Modale image={arrImg} show={show} handleClose={handleClose} />
+                                </div>
                                 <div className="container_descrizioneHotel p-2">
                                     <p style={{ fontSize: '14px', lineHeight: '16px' }}>{row.days[0].description}</p>
                                 </div>
