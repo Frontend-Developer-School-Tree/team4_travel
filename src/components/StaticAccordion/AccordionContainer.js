@@ -6,7 +6,7 @@ import Tariffe from './Tariffe';
 
 function AccordionContainer() {
     const contesto = useContext(AppContext);
-    const { documentsRequested, documentsInsurance, documentsCancellation, documentsPayment } = contesto;
+    const { documentsRequested, documentsInsurance, documentsCancellation, documentsPayment, documentsCarRental } = contesto;
     return (
         <div>
             <Tariffe title='TARIFFE' content={contesto} />
@@ -14,6 +14,7 @@ function AccordionContainer() {
             <Accordion title={documentsInsurance.name} content={documentsInsurance.description}/>
             <Accordion title={documentsCancellation.name} content={documentsCancellation.description}/>
             <Accordion title={documentsPayment.name} content={documentsCancellation.description}/>
+            <Accordion title={documentsCarRental.name} content={documentsCarRental.description} />
         </div>
     )
 }
