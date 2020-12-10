@@ -10,15 +10,17 @@ function LuoghiBody({ rows, car }) {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
+    let day = 0;
     return (
-        <div className="card-body p-4" style={{ borderTop: '1px solid lightgray' }}>
-            {rows.map((row, index) => {
-                return (
+        <div className="card-body p-4" style={{borderTop:'1px solid lightgray'}}>
+            {
+            rows.map((row, index)=>{
+                day++;
+                return(
                     <div className='row'>
-                        <Timeline className='col-1' />
-                        <div className="container_data col" style={{ float: 'left' }} key={row.id}>
-
+                        <Timeline day={day} car={car} index={index} className='col-1'/>
+                        <div className="container_data col" style={{float:'left'}}key={row.id}>
+                            
                             <div className="container_citta">
                                 <p>{row.places[0].name}</p>
                             </div>

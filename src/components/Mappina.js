@@ -15,11 +15,11 @@ function Mappina() {
     
     console.log(Pos_siracusa);
     return(
-      <div className="container-fluid mt-5 d-flex justify-content-center">
+      <div className="container-fluid mt-5">
             <div className="row">
-                <div className="col-lg-12" style={{minWidth:'1300px', maxWidth:'1300px'}}>
-                    <div className="row shadow bg-light arrotonda-card" style={{height: '675px'}}>
-                      <MapContainer className="container_mappa"  style={{ width: '1260px', height: '400px'}} center={Pos_siracusa} zoom={8} scrollWheelZoom={true}>
+                <div className="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 col-xs-12">
+                    <div className="pt-1 shadow bg-light arrotonda-card" style={{height: 'auto'}}>
+                      <MapContainer className="container_mappa"  style={{ MaxWidth: '1260px', height: '400px'}} center={Pos_siracusa} zoom={8} scrollWheelZoom={true}>
                         <TileLayer
                           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

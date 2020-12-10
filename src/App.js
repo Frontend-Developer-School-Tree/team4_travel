@@ -50,7 +50,7 @@ function App() {
             </div>
             :
             <div className="d-flex justify-content-center align-items-center" style={{ width: '100vw', height: '100vh' }}>
-                <div className="spinner-border" role="status" style={{height: '100px', width: '100px'}}>
+                <div className="spinner-grow text-info" role="status" style={{height: '100px', width: '100px'}}>
                     <span className="sr-only">Loading...</span>
                 </div>
             </div>
