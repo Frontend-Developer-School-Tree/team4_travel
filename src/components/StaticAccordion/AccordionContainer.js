@@ -8,7 +8,7 @@ function AccordionContainer() {
     const contesto = useContext(AppContext);
     const { documentsRequested, documentsInsurance, documentsCancellation, documentsPayment, documentsCarRental } = contesto;
     return (
-        <div>
+        <div className='container-fluid'>
             <Tariffe title='TARIFFE' content={contesto} />
             <Accordion title={documentsRequested.name} content={documentsRequested.description}/>
             <Accordion title={documentsInsurance.name} content={documentsInsurance.description}/>

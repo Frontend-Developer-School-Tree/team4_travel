@@ -11,9 +11,8 @@ const Footer = () => {
     const agency = contesto.agency;
     return (
         <div>
-            <footer className="page-footer font-small bg-primary text-white pt-4">
-                <div className="container-fluid text-center text-md-left">
-                    <div className="row">
+            <footer className="container-fluid font-small bg-primary text-white pt-4">
+                <div className="row text-center text-md-left">
                         <div className="col-md-9 mt-md-0 mt-3 pl-3">
                             <p>{agency.name} | Licenza n°( {agency.licenseNumber} )</p>
                             <br />
@@ -25,7 +24,6 @@ const Footer = () => {
                         <div className="col-md-3 mt-md-0 mt-3">
                             <button className="btn btn-light p-md-2" onClick={(e)=>stampa(e)}>Scarica</button>
                         </div>
-                    </div>
                 </div>
                 <div className="footer-copyright text-center">
                     <p>© 2020 Copyleft: <strong>Team 4 - Francesca, Johanna, Fabio, Giuseppe</strong></p>

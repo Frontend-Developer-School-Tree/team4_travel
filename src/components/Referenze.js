@@ -6,9 +6,9 @@ function Referenze() {
     const contesto = useContext(AppContext);
 
     return (
-        <div className="container-fluid mt-5 d-flex justify-content-center">
+        <div className="container-fluid mt-5">
             <div className="row">
-                <div className="col-lg-12" style={{minWidth:'1300px'}}>
+                <div className="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 col-xs-12">
                     <div className="row shadow bg-light arrotonda-card">
                         <div className="col-2 p-4">
                             <div style={{width: '168px', height: '168px',backgroundImage: `url(${contesto.operator.image})`,backgroundSize:'cover', }}>

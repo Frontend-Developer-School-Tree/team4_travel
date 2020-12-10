@@ -7,9 +7,9 @@ function LuoghiAccordion({ city, date, rows, car }) {
     const iconClass = `fas fa-angle-${(isOpen ? 'up' : 'down')} float-right p-2`;
     console.log(car);
     return (
-        <div className='d-flex justify-content-center mt-4'>
+        <div className='container-fluid mt-4'>
             <div className="row">
-                <div className="col-sm col-md col-lg col-xl" style={{ minWidth: '1300px' }}>
+                <div className="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 col-xs-12">
                     <div className="arrotonda-card card bg-light mb-3 shadow">
                         <div className="card-header p-3 text-uppercase">
                             <span className="align-middle p-3 font-weight-bold" style={{ color: "#5B5959", fontSize: '32px', lineHeight:'37px' }}>{city}</span>
