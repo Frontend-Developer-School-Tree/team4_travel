@@ -4,7 +4,7 @@ import LuoghiBodyAccomodation from './LuoghiBodyAccomodation'
 import LuoghiCar from './LuoghiCar'
 import Modale from './Modale'
 
-function LuoghiBody({rows, car}) {
+function LuoghiBody({ rows, car }) {
 
     const [show, setShow] = useState(false);
 
@@ -12,50 +12,67 @@ function LuoghiBody({rows, car}) {
     const handleShow = () => setShow(true);
 
     return (
-        <div className="card-body p-4" style={{borderTop:'1px solid lightgray'}}>
-            {rows.map((row, index)=>{
-                return(
+        <div className="card-body p-4" style={{ borderTop: '1px solid lightgray' }}>
+            {rows.map((row, index) => {
+                return (
                     <div className='row'>
-                        <Timeline className='col-1'/>
-                        <div className="container_data col" style={{float:'left'}}key={row.id}>
-                            
+                        <Timeline className='col-1' />
+                        <div className="container_data col" style={{ float: 'left' }} key={row.id}>
+
                             <div className="container_citta">
                                 <p>{row.places[0].name}</p>
                             </div>
                             <div className="blocco_uno p-2">
                                 <div className="container_titolo p-2">
                                     <p className="card-text " style={{ color: '#FFB400', fontSize: '30px', lineHeight: '35px', fontWeight: '600' }}>
-                                        {row.days[0].name}  
-                                        <span  style={{ color: '#9BA7AF', fontSize: '26px', lineHeight: '30px', fontWeight: '400'}}>   {row.dayDate}</span>
+                                        {row.days[0].name}
+                                        <span style={{ color: '#9BA7AF', fontSize: '26px', lineHeight: '30px', fontWeight: '400' }}>   {row.dayDate}</span>
                                     </p>
                                 </div>
                                 <div className="container_imageHotel p-2">
-                                    {row.days[0].images.map(img=>{
-                                        return(
+                                    {row.days[0].images.map(img => {
+                                        return (
                                             <div>
-                                                <div className="col" key={img.id} onClick={handleShow} style={{cursor:'pointer', width: '1100px', height: '300px',backgroundImage: `url(${img.image})`,backgroundSize:'cover' }} />
-                                                <Modale image={img.image} show={show} handleClose={handleClose} /> 
+                                                <div className="col" key={img.id} onClick={handleShow} style={{ cursor: 'pointer', width: '1100px', height: '300px', backgroundImage: `url(${img.image})`, backgroundSize: 'cover' }} />
+                                                <Modale image={img.image} show={show} handleClose={handleClose} />
                                             </div>
                                         )
                                     })}
                                 </div>
                                 <div className="container_descrizioneHotel p-2">
-                                    <p style={{fontSize:'14px', lineHeight:'16px'}}>{row.days[0].description}</p>
+                                    <p style={{ fontSize: '14px', lineHeight: '16px' }}>{row.days[0].description}</p>
                                 </div>
                             </div>
-                        
-                            <div className="p-3" style={{ width:'1100px'}}>
-                                {(index===0 && car) && (<LuoghiCar />)}
-                            </div>
-                            
-                            
-                            <LuoghiBodyAccomodation accomodations={row.accomodations}/>
 
-                            <p>Icona verde con spunta</p>
-                            <p>{row.included}</p>
+                            <div className="p-3" style={{ width: '1100px' }}>
+                                {(index === 0 && car) && (<LuoghiCar />)}
+                            </div>
+
+
+                            <LuoghiBodyAccomodation accomodations={row.accomodations} />
+
+                            <div className="row">
+                                <div className="col-6 p-4">
+                                    <div className="d-flex align-items-center justify-content-center" style={{ float:'left',backgroundColor: 'rgb(176, 238, 211)', width: '50px', height: '50px', borderRadius: '50px', cursor: 'pointer' }}>
+                                        <i class="fas fa-check" style={{ fontSize: '26px', color: 'rgb(58, 190, 133)' }}></i>
+                                    </div>
+                                    <div className="m-3" style={{fontSize:'14px', lineHeight:'20px',float:'left'}}>{row.included}</div>
+                                </div>
+
+                                <div className="col-6 p-4">
+                                    <div className="d-flex align-items-center justify-content-center" style={{ float:'left',backgroundColor: 'rgb(253, 209, 218)', width: '50px', height: '50px', borderRadius: '50px', cursor: 'pointer' }}>
+                                        <i class="fas fa-times" style={{ fontSize: '26px', color: 'rgb(189, 98, 117)' }}></i>
+                                       
+                                    </div>
+                                    <div className="m-3"  style={{fontSize:'14px', lineHeight:'20px',float:'left'}}>{row.notIncluded}</div>
+                                </div>
+                            </div>
+
+
+
                             <hr />
                         </div>
-                           
+
                     </div>
                 )
             })}
