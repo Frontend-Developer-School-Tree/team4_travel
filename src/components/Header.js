@@ -14,7 +14,7 @@ function Header() {
                 <div className="row">
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <img className="m-5" src={contesto.agency.image} alt={contesto.agency.name} width="132" height="45" />
-                        <div className="text-uppercase text-white align-bottom position-absolute" style={{ zIndex: '2', right: '5vw', top: '64vh' }}>
+                        <div className="text-uppercase text-white position-absolute text-right pr-5 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style={{top: '60vh', zIndex: '2'}}>
                             <span className="font-italic h1 font-weight-bold">Team 4</span>
                             <h1 className="font-weight-bold mt-3">CIRCUITO COMPLETO DELLA SICILIA ALLA SCOPERTA DEI SAPORI</h1>
                             <button className="btn btn-primary p-2 text-uppercase mt-3" type="button">
