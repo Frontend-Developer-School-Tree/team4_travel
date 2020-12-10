@@ -134,3 +134,10 @@ body{
 .overlay_gallery:hover{
     opacity: 0.5;
 }
+
+@media screen and (max-width: 768px) {
+
+    .sparisci{
+        display: none;
+    }
+  }
