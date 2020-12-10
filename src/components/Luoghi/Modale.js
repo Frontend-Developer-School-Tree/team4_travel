@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Modal } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 
 
 function Modale({ image, show, handleClose }) {
@@ -18,9 +18,9 @@ function Modale({ image, show, handleClose }) {
                         <div className="col " style={image&&{ cursor: 'pointer', width: '1000px', minHeight: '350px', backgroundImage: `url(${urlImg})`, backgroundSize: 'cover', backgroundPosition: '50%' }} />
                     </Modal.Body>
                     <Modal.Footer className="modal-footer p-3">
-                        {image&&image.map(img=>{
+                        {image&&image.map((img,index)=>{
                             return(
-                                <div className="col " style={{ cursor: 'pointer', width: '1000px', minHeight: '350px', backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: '50%' }} onClick={()=>setUrlImg(img)}/>
+                                <div key={5001252*index} className="col " style={{ cursor: 'pointer', width: '1000px', minHeight: '350px', backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: '50%' }} onClick={()=>setUrlImg(img)}/>
                             )
                         })}
                     </Modal.Footer>

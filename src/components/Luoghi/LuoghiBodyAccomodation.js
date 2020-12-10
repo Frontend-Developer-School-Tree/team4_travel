@@ -35,7 +35,7 @@ export default function LuoghiBodyAccomodation({ accomodations }) {
                         <div className="col-6 p-4">
                             <div className="p-2" style={{ fontSize: '20px', lineHeight: '23px', fontWeight: '600' }}>{el.name}</div>
                             <div className="p-2" style={{ fontSize: '16px', lineHeight: '18px' }}>{el.description}</div>
-                            <div><a className="p-2" href="#" style={{ textDecoration: 'underline' }}>Clicca qui per maggiori dettagli</a></div>
+                            <div><p className="p-2" style={{ textDecoration: 'underline', color: 'blue'}}>Clicca qui per maggiori dettagli</p></div>
 
 
                             {(el.tags) && el.tags.map(tag => {

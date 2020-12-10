@@ -1,7 +1,8 @@
 import { Button, Form } from 'react-bootstrap';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-export default function Login({}) {
+
+export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 

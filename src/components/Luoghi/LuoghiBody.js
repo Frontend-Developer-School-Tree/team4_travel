@@ -11,12 +11,14 @@ function LuoghiBody({ rows, car }) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     let day = 0;
+    const arrImg = [];
     return (
-        <div className="card-body" style={{borderTop:'1px solid lightgray'}}>
+        <div className="container-fluid card-body" style={{ borderTop: '1px solid lightgray' }}>
             {
             rows.map((row, index)=>{
                 day++;
-                const arrImg = [];
+                arrImg.push([]);
+                console.log(arrImg)
                 return(
                     <div className='row'>
                         <Timeline day={day} car={car} index={index} className='col-1 sparisci'/>
@@ -34,53 +36,52 @@ function LuoghiBody({ rows, car }) {
                                 </div>
                                 <div className="container_imageHotel p-2 d-flex">
                                     {row.days[0].images.map(img => {
-                                        arrImg.push(img.image);
+                                        arrImg[index].push(img.image);
                                         return (
                                                 <div className="col m-2" key={img.id} onClick={handleShow} style={{ cursor: 'pointer', width: '1100px', height: '300px', backgroundImage: `url(${img.image})`, backgroundSize: 'cover' }} />
                                         )
                                     })}
-                                    <Modale image={arrImg} show={show} handleClose={handleClose} />
+                                    <Modale image={arrImg[index]} show={show} handleClose={handleClose} />
                                 </div>
                                 <div className="container_descrizioneHotel p-2">
                                     <p style={{ fontSize: '14px', lineHeight: '16px' }}>{row.days[0].description}</p>
                                 </div>
                             </div>
 
-                            <div className="p-3" style={{ width: '1100px' }}>
-                                {(index === 0 && car) && (<LuoghiCar />)}
-                            </div>
-
-
-                            <LuoghiBodyAccomodation accomodations={row.accomodations} />
-
-                            <div className="row">
-                                <div className="col-6 p-4">
-                                    <div className="d-flex align-items-center justify-content-center" style={{ float:'left',backgroundColor: 'rgb(176, 238, 211)', width: '50px', height: '50px', borderRadius: '50px', cursor: 'pointer' }}>
-                                        <i class="fas fa-check" style={{ fontSize: '26px', color: 'rgb(58, 190, 133)' }}></i>
+                                    <div className="p-3" style={{ width: '1100px' }}>
+                                        {(index === 0 && car) && (<LuoghiCar />)}
                                     </div>
-                                    <div className="m-3" style={{fontSize:'14px', lineHeight:'20px',float:'left'}}>{row.included}</div>
-                                </div>
 
-                                {(row.notIncluded)&& 
-                                <div className="col-6 p-4">
-                                    <div className="d-flex align-items-center justify-content-center" style={{ float:'left',backgroundColor: 'rgb(253, 209, 218)', width: '50px', height: '50px', borderRadius: '50px', cursor: 'pointer' }}>
-                                        <i class="fas fa-times" style={{ fontSize: '26px', color: 'rgb(189, 98, 117)' }}></i>
-                                       
+
+                                    <LuoghiBodyAccomodation accomodations={row.accomodations} />
+
+                                    <div className="row">
+                                        <div className="col-6 p-4">
+                                            <div className="d-flex align-items-center justify-content-center" style={{ float: 'left', backgroundColor: 'rgb(176, 238, 211)', width: '50px', height: '50px', borderRadius: '50px', cursor: 'pointer' }}>
+                                                <i class="fas fa-check" style={{ fontSize: '26px', color: 'rgb(58, 190, 133)' }}></i>
+                                            </div>
+                                            <div className="m-3" style={{ fontSize: '14px', lineHeight: '20px', float: 'left' }}>{row.included}</div>
+                                        </div>
+
+                                        {(row.notIncluded) &&
+                                            <div className="col-6 p-4">
+                                                <div className="d-flex align-items-center justify-content-center" style={{ float: 'left', backgroundColor: 'rgb(253, 209, 218)', width: '50px', height: '50px', borderRadius: '50px', cursor: 'pointer' }}>
+                                                    <i class="fas fa-times" style={{ fontSize: '26px', color: 'rgb(189, 98, 117)' }}></i>
+
+                                                </div>
+                                                <div className="m-3" style={{ fontSize: '14px', lineHeight: '20px', float: 'left' }}>{row.notIncluded}</div>
+                                            </div>
+                                        }
+
                                     </div>
-                                    <div className="m-3"  style={{fontSize:'14px', lineHeight:'20px',float:'left'}}>{row.notIncluded}</div>
+
+
+
+                                    <hr />
                                 </div>
-                                }
-
                             </div>
-
-
-
-                            <hr />
-                        </div>
-
-                    </div>
-                )
-            })}
+                    )
+                })}
         </div>
     )
 }

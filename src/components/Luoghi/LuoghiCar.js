@@ -1,18 +1,13 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { AppContext } from '../../context/AppContext';
-import Modale from './Modale';
 
 
 export default function LuoghiCar() {
     const contesto = useContext(AppContext)
     const transports = contesto.rows[0].transports[0];
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
     
     return (
-        <div onClick={()=> handleShow()}>
+        <div >
             <div className="car_section d-flex justify-content-start">
                 <div className="d-flex align-items-center justify-content-center" style={{ backgroundColor: 'rgb(255, 180, 0)', width: '100px', height: '100px', cursor: 'pointer' }}>
                     <i class="fas fa-car" style={{ fontSize: '40px', color: 'rgb(202, 143, 1)' }}></i>
@@ -32,7 +27,6 @@ export default function LuoghiCar() {
 
                 </div>
             </div>
-            <Modale show={show} handleClose={handleClose} />
         </div>
 
     )

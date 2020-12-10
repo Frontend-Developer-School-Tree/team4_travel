@@ -1,3 +1,7 @@
+// Funzione per ottenere array con Città per gruppo di giorni
+//ES: array iniz [Catania, Catania, Catania, Siracusa, Siracusa, Palermo, Palermo, Catania]
+// risultato [Catania, Siracusa, Palermo, Catania]
+
 export function arrayCity(rows){
     const arrCity = []; 
     arrCity.push(rows[0].places[0].name);
@@ -6,7 +10,7 @@ export function arrayCity(rows){
     }
     return arrCity;
 }
-
+// FUNZIONE PER STAMPARE MESE
 function selezionaMese(n){
     let a;
     switch(n){
@@ -25,7 +29,7 @@ function selezionaMese(n){
     }
     return a;
 }
-
+//FUNZIONE PER TRASFORMARE DATA API IN DATA DESIGN
 export function stampaData(start, end){
     let dateStart = new Date (start);
     let dateEnd = new Date(end);
@@ -40,7 +44,9 @@ export function stampaData(start, end){
     else if (ys !== ye) return `${ds} ${nms} ${ys} - ${de} ${nms} ${ye}`;
     else if (ds!==de && ms===me && ys===ye) return `${ds} - ${de} ${nms} ${ye}`;
 }
-
+// FUNZIONE CHE RESTITUISCE DATA DI INIZIO E DATA DI FINE DI OGNI SOSTA
+//Es. Siracausa 21/02 -Siracura 22/023 - Siracursa 23/03.
+//Result [[21/02.,[23/02]]]
 export function arrayDate (rows){
     const arrDate = [[rows[0].dayDate, rows[0].dayDate]]
     let scorri = 0;
@@ -56,7 +62,7 @@ export function arrayDate (rows){
     }
     return arrDate;
 }
-
+//Algoritmo per gestione corpo accordion
 export function arrayBody(rows) {
     let scorri = 0;
     const arrBody = [[rows[0]]];
@@ -73,6 +79,7 @@ export function arrayBody(rows) {
     }
     return arrBody;
 }
+// Algoritmo per ottenere un array senza doppioni
 export function arrayUnique(data){
     const uniqueArray = [... new Set(data)];
     return uniqueArray;
