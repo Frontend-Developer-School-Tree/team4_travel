@@ -9,7 +9,7 @@ function Header() {
 
 
     return (
-        <div className="container-fluid sfondo position-relative" style={{ backgroundImage: `url(${contesto.images[0].image})`, zIndex: '0', height: '100vh', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', padding: '0' }} >
+        <div className="container-fluid sfondo position-relative" style={{ backgroundImage: `url(${contesto.images[0].image})`, zIndex: '0', height: '100vh', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', padding: '0',}} >
             <div className="position-absolute overlay_image" style={{ zIndex: '1', height: '100%', width: '100%',}}>
                 <div className="row">
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
