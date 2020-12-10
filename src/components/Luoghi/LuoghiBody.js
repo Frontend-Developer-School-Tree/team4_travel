@@ -12,14 +12,15 @@ function LuoghiBody({ rows, car }) {
     const handleShow = () => setShow(true);
     let day = 0;
     return (
-        <div className="card-body p-4" style={{borderTop:'1px solid lightgray'}}>
+        <div className="card-body" style={{borderTop:'1px solid lightgray'}}>
             {
             rows.map((row, index)=>{
                 day++;
+                let arrImg = [];
                 return(
                     <div className='row'>
                         <Timeline day={day} car={car} index={index} className='col-1'/>
-                        <div className="container_data col" style={{float:'left'}}key={row.id}>
+                        <div className="col" style={{float:'left'}}key={row.id}>
                             
                             <div className="container_citta">
                                 <p>{row.places[0].name}</p>
@@ -33,14 +34,11 @@ function LuoghiBody({ rows, car }) {
                                 </div>
                                 <div className="container_imageHotel p-2 d-flex">
                                     {row.days[0].images.map(img => {
+                                        arrImg.push(img.image);
                                         return (
-                                            
                                                 <div className="col m-2" key={img.id} onClick={handleShow} style={{ cursor: 'pointer', width: '1100px', height: '300px', backgroundImage: `url(${img.image})`, backgroundSize: 'cover' }} />
-                                               
-                                            
                                         )
-                                    })}{/*  <Modale image={img.image} show={show} handleClose={handleClose} /> */}
-                                </div>
+                                    })}<Modale image={arrImg} show={show} handleClose={handleClose} /></div>
                                 <div className="container_descrizioneHotel p-2">
                                     <p style={{ fontSize: '14px', lineHeight: '16px' }}>{row.days[0].description}</p>
                                 </div>
